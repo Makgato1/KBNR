@@ -1,122 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request a Quote</title>
-  <style>
-    :root {
-      --ink: #18212b;
-      --muted: #66717d;
-      --line: #dce2e8;
-      --surface: #ffffff;
-      --page: #f4f6f8;
-      --accent: #173f5f;
-      --accent-hover: #102f49;
-      --radius: 14px;
-      --shadow: 0 12px 36px rgba(20, 36, 52, .08);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 40px 18px;
-      background: var(--page);
-      color: var(--ink);
-      font: 15px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    .quote-wrap { width: min(860px, 100%); margin: 0 auto; }
-    .intro { margin: 0 0 24px; }
-    .eyebrow {
-      margin: 0 0 8px;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 750;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 38px); line-height: 1.15; }
-    .intro p:last-child { margin: 0; color: var(--muted); }
-    .form-card {
-      padding: clamp(20px, 4vw, 34px);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    fieldset { margin: 0; padding: 0; border: 0; }
-    fieldset + fieldset { margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
-    legend { margin-bottom: 18px; font-size: 18px; font-weight: 750; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .field { min-width: 0; }
-    .field.full { grid-column: 1 / -1; }
-    label { display: block; margin-bottom: 7px; font-weight: 650; font-size: 13px; }
-    .optional { color: var(--muted); font-weight: 400; }
-    input, select, textarea {
-      width: 100%;
-      min-height: 46px;
-      padding: 11px 13px;
-      border: 1px solid #cbd3dc;
-      border-radius: 9px;
-      background: #fff;
-      color: var(--ink);
-      font: inherit;
-      outline: none;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    textarea { min-height: 116px; resize: vertical; }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(23, 63, 95, .12);
-    }
-    .hint { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
-    .notice {
-      margin-top: 24px;
-      padding: 15px 16px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #f8fafb;
-      color: #4d5965;
-      font-size: 13px;
-    }
-    .actions { display: flex; align-items: center; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
-    button {
-      min-height: 48px;
-      padding: 0 24px;
-      border: 0;
-      border-radius: 9px;
-      background: var(--accent);
-      color: #fff;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background .15s, transform .15s;
-    }
-    button:hover { background: var(--accent-hover); transform: translateY(-1px); }
-    button:disabled { opacity: .6; cursor: wait; transform: none; }
-    .status { margin: 0; color: var(--muted); font-size: 13px; }
-    .status.error { color: #b42318; }
-    .status.success { color: #167044; }
-    .required-note { margin: 18px 0 0; color: var(--muted); font-size: 12px; }
-    @media (max-width: 620px) {
-      body { padding: 24px 12px; }
-      .grid { grid-template-columns: 1fr; gap: 14px; }
-      .field.full { grid-column: auto; }
-      button { width: 100%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBNR Tax & Accounting</title>
+
+    <link rel="stylesheet" href="/global.css">
 </head>
-<body>
+
+
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">KBNR</div>
 
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About</a></li>
-                    <li><a href="pages/services.html">Services</a></li>
-                    <li><a href="pages/generateQoute.html">Generate Quote</a></li>
-                    <a href="pages/contact.html" class="contact-btn">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/about.html">About</a></li>
+                    <li><a href="../pages/services.html">Services</a></li>
+                    <li><a href="../pages/generateQoute.html">Generate Quote</a></li>
+                    <a href="../pages/contact.html" class="contact-btn">
   Speak To Us
     <span>↗</span>
 </a>
@@ -124,13 +28,13 @@
             </nav>
         </div>
     </header>
-  <main class="quote-wrap">
-    <header class="intro">
-      <p class="eyebrow">KBNR · Tax &amp; Accounting</p>
+
+    <body>
+  <main class="quote-wrap"> 
+     
       <h1>Request a Quote</h1>
       <p>Tell us a little about what you need. Our team will review your information and get back to you with a quotation.</p>
-    </header>
-
+   <br>
     <form class="form-card" id="quoteForm">
       <fieldset>
         <legend>1. Your details</legend>
@@ -226,28 +130,82 @@
       </div>
       <p class="required-note">Your information should only be sent once a secure form endpoint or approved email workflow has been connected.</p>
     </form>
-  </main>
+    </main>
+  
 
-  <script>
-    const form = document.getElementById("quoteForm");
-    const status = document.getElementById("formStatus");
-    const submitButton = document.getElementById("submitButton");
+  <footer>
 
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
 
-      if (!form.reportValidity()) return;
+    <div class="footer-container">
 
-      const formData = Object.fromEntries(new FormData(form).entries());
+        <div class="footer-about">
 
-      // TODO: Send formData to your backend, CRM, or approved form service.
-      // No data is transmitted by this starter file.
-      console.log("Quote request preview:", formData);
+            <h2>KBNR</h2>
 
-      status.textContent = "Form validated. Connect a submission endpoint to receive quote requests.";
-      status.className = "status success";
-      submitButton.textContent = "Request validated";
-    });
-  </script>
+            <p>
+                Johannesburg, South Africa
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/services.html">Services</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-legal">
+
+            <h3>Legal</h3>
+
+            <ul>
+                <li>
+                    <a href="pages/privacyPolicy.html">
+                        Privacy Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pages/terms of use.html">
+                        Terms of Use
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Contact</h3>
+
+            <p>Email: info@kbnr.co.za</p>
+            <p>Phone: +27 XX XXX XXXX</p>
+            <p>South Africa</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 KBNR Tax & Accounting. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+    <script src="/global.js"></script>
+
 </body>
 </html>
+

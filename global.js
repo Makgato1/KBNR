@@ -94,3 +94,23 @@ window.onload = () => {
 // ======================================
 
 console.log("KBNR Website Loaded Successfully.");
+
+    const form = document.getElementById("quoteForm");
+    const status = document.getElementById("formStatus");
+    const submitButton = document.getElementById("submitButton");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const formData = Object.fromEntries(new FormData(form).entries());
+
+      // TODO: Send formData to your backend, CRM, or approved form service.
+      // No data is transmitted by this starter file.
+      console.log("Quote request preview:", formData);
+
+      status.textContent = "Form validated. Connect a submission endpoint to receive quote requests.";
+      status.className = "status success";
+      submitButton.textContent = "Request validated";
+    });
