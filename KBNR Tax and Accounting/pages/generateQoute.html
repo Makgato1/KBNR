@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Quote</title>
+  <style>
+    :root {
+      --ink: #18212b;
+      --muted: #66717d;
+      --line: #dce2e8;
+      --surface: #ffffff;
+      --page: #f4f6f8;
+      --accent: #173f5f;
+      --accent-hover: #102f49;
+      --radius: 14px;
+      --shadow: 0 12px 36px rgba(20, 36, 52, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px 18px;
+      background: var(--page);
+      color: var(--ink);
+      font: 15px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .quote-wrap { width: min(860px, 100%); margin: 0 auto; }
+    .intro { margin: 0 0 24px; }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 38px); line-height: 1.15; }
+    .intro p:last-child { margin: 0; color: var(--muted); }
+    .form-card {
+      padding: clamp(20px, 4vw, 34px);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    fieldset { margin: 0; padding: 0; border: 0; }
+    fieldset + fieldset { margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
+    legend { margin-bottom: 18px; font-size: 18px; font-weight: 750; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .field { min-width: 0; }
+    .field.full { grid-column: 1 / -1; }
+    label { display: block; margin-bottom: 7px; font-weight: 650; font-size: 13px; }
+    .optional { color: var(--muted); font-weight: 400; }
+    input, select, textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 13px;
+      border: 1px solid #cbd3dc;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    textarea { min-height: 116px; resize: vertical; }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(23, 63, 95, .12);
+    }
+    .hint { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
+    .notice {
+      margin-top: 24px;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f8fafb;
+      color: #4d5965;
+      font-size: 13px;
+    }
+    .actions { display: flex; align-items: center; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+    button {
+      min-height: 48px;
+      padding: 0 24px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .15s, transform .15s;
+    }
+    button:hover { background: var(--accent-hover); transform: translateY(-1px); }
+    button:disabled { opacity: .6; cursor: wait; transform: none; }
+    .status { margin: 0; color: var(--muted); font-size: 13px; }
+    .status.error { color: #b42318; }
+    .status.success { color: #167044; }
+    .required-note { margin: 18px 0 0; color: var(--muted); font-size: 12px; }
+    @media (max-width: 620px) {
+      body { padding: 24px 12px; }
+      .grid { grid-template-columns: 1fr; gap: 14px; }
+      .field.full { grid-column: auto; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">KBNR</div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/services.html">Services</a></li>
+                    <li><a href="pages/generateQoute.html">Generate Quote</a></li>
+                    <a href="pages/contact.html" class="contact-btn">
+  Speak To Us
+    <span>↗</span>
+</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+  <main class="quote-wrap">
+    <header class="intro">
+      <p class="eyebrow">KBNR · Tax &amp; Accounting</p>
+      <h1>Request a Quote</h1>
+      <p>Tell us a little about what you need. Our team will review your information and get back to you with a quotation.</p>
+    </header>
+
+    <form class="form-card" id="quoteForm">
+      <fieldset>
+        <legend>1. Your details</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="fullName">Full name *</label>
+            <input id="fullName" name="fullName" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email address *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Contact number *</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+          </div>
+          <div class="field">
+            <label for="clientType">You are enquiring as *</label>
+            <select id="clientType" name="clientType" required>
+              <option value="">Select an option</option>
+              <option value="individual">An individual</option>
+              <option value="sole-proprietor">A sole proprietor</option>
+              <option value="company">A registered company</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="businessName">Business / organisation name <span class="optional">(if applicable)</span></label>
+            <input id="businessName" name="businessName" autocomplete="organization" />
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Quote requirements</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="service">Service required *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="accounting">Accounting</option>
+              <option value="bookkeeping">Bookkeeping</option>
+              <option value="tax">Tax services</option>
+              <option value="vat">VAT services</option>
+              <option value="payroll">Payroll</option>
+              <option value="company-registration">Company registration</option>
+              <option value="other">Other / not sure</option>
+            </select>
+            <p class="hint">These are starter options and should be aligned with the services on the original calculator.</p>
+          </div>
+          <div class="field">
+            <label for="frequency">Service frequency *</label>
+            <select id="frequency" name="frequency" required>
+              <option value="">Select frequency</option>
+              <option value="once-off">Once-off</option>
+              <option value="monthly">Monthly</option>
+              <option value="quarterly">Quarterly</option>
+              <option value="annually">Annually</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="businessSize">Business size <span class="optional">(if applicable)</span></label>
+            <select id="businessSize" name="businessSize">
+              <option value="">Select an option</option>
+              <option value="individual">Individual / personal</option>
+              <option value="micro">Micro business</option>
+              <option value="small">Small business</option>
+              <option value="medium">Medium business</option>
+              <option value="large">Large business</option>
+              <option value="not-applicable">Not applicable</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="startDate">When do you need the service?</label>
+            <input id="startDate" name="startDate" type="date" />
+          </div>
+          <div class="field full">
+            <label for="requirements">Additional information <span class="optional">(optional)</span></label>
+            <textarea id="requirements" name="requirements" placeholder="Describe what you need, any deadlines, and other details that may help us prepare your quote."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="notice">
+        <strong>Quotation notice</strong><br />
+        This starter version collects your requirements only. It does not calculate or display a price yet. The original calculator's pricing rules will be added once its fields and formulas have been confirmed.
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="submitButton">Submit quote request</button>
+        <p class="status" id="formStatus" role="status" aria-live="polite">Fields marked * are required.</p>
+      </div>
+      <p class="required-note">Your information should only be sent once a secure form endpoint or approved email workflow has been connected.</p>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById("quoteForm");
+    const status = document.getElementById("formStatus");
+    const submitButton = document.getElementById("submitButton");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const formData = Object.fromEntries(new FormData(form).entries());
+
+      // TODO: Send formData to your backend, CRM, or approved form service.
+      // No data is transmitted by this starter file.
+      console.log("Quote request preview:", formData);
+
+      status.textContent = "Form validated. Connect a submission endpoint to receive quote requests.";
+      status.className = "status success";
+      submitButton.textContent = "Request validated";
+    });
+  </script>
+</body>
+</html>
