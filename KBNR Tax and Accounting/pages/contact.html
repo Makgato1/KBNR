@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBNR Tax & Accounting</title>
+
+    <link rel="stylesheet" href="/global.css">
+</head>
+
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">KBNR</div>
+
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/about.html">About</a></li>
+                    <li><a href="../pages/services.html">Services</a></li>
+                    <li><a href="../pages/generateQoute.html">Generate Quote</a></li>
+                    <a href="../pages/contact.html" class="contact-btn">
+  Speak To Us
+    <span>↗</span>
+</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+  <main class="quote-wrap"> 
+     
+      <h1>Request a Quote</h1>
+      <p>Tell us a little about what you need. Our team will review your information and get back to you with a quotation.</p>
+   <br>
+    <form class="form-card" id="quoteForm">
+      <fieldset>
+        <legend>1. Your details</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="fullName">Full name *</label>
+            <input id="fullName" name="fullName" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email address *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Contact number *</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+          </div>
+          <div class="field">
+            <label for="clientType">You are enquiring as *</label>
+            <select id="clientType" name="clientType" required>
+              <option value="">Select an option</option>
+              <option value="individual">An individual</option>
+              <option value="sole-proprietor">A sole proprietor</option>
+              <option value="company">A registered company</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="businessName">Business / organisation name <span class="optional">(if applicable)</span></label>
+            <input id="businessName" name="businessName" autocomplete="organization" />
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Quote requirements</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="service">Service required *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="accounting">Accounting</option>
+              <option value="bookkeeping">Bookkeeping</option>
+              <option value="tax">Tax services</option>
+              <option value="vat">VAT services</option>
+              <option value="payroll">Payroll</option>
+              <option value="company-registration">Company registration</option>
+              <option value="other">Other / not sure</option>
+            </select>
+            <p class="hint">These are starter options and should be aligned with the services on the original calculator.</p>
+          </div>
+          <div class="field">
+            <label for="frequency">Service frequency *</label>
+            <select id="frequency" name="frequency" required>
+              <option value="">Select frequency</option>
+              <option value="once-off">Once-off</option>
+              <option value="monthly">Monthly</option>
+              <option value="quarterly">Quarterly</option>
+              <option value="annually">Annually</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="businessSize">Business size <span class="optional">(if applicable)</span></label>
+            <select id="businessSize" name="businessSize">
+              <option value="">Select an option</option>
+              <option value="individual">Individual / personal</option>
+              <option value="micro">Micro business</option>
+              <option value="small">Small business</option>
+              <option value="medium">Medium business</option>
+              <option value="large">Large business</option>
+              <option value="not-applicable">Not applicable</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="startDate">When do you need the service?</label>
+            <input id="startDate" name="startDate" type="date" />
+          </div>
+          <div class="field full">
+            <label for="requirements">Additional information <span class="optional">(optional)</span></label>
+            <textarea id="requirements" name="requirements" placeholder="Describe what you need, any deadlines, and other details that may help us prepare your quote."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="notice">
+        <strong>Quotation notice</strong><br />
+        This starter version collects your requirements only. It does not calculate or display a price yet. The original calculator's pricing rules will be added once its fields and formulas have been confirmed.
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="submitButton">Submit quote request</button>
+        <p class="status" id="formStatus" role="status" aria-live="polite">Fields marked * are required.</p>
+      </div>
+      <p class="required-note">Your information should only be sent once a secure form endpoint or approved email workflow has been connected.</p>
+    </form>
+    </main>
+  
+
+  <footer>
+
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <h2>KBNR</h2>
+
+            <p>
+                Johannesburg, South Africa
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/services.html">Services</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-legal">
+
+            <h3>Legal</h3>
+
+            <ul>
+                <li>
+                    <a href="../pages/privacyPolicy.html">
+                        Privacy Policy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../pages/terms of use.html">
+                        Terms of Use
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Contact</h3>
+
+            <p>Email: info@kbnr.co.za</p>
+            <p>Phone: +27 XX XXX XXXX</p>
+            <p>South Africa</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 KBNR Tax & Accounting. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+    <script src="/global.js"></script>
+
+</body>
+</html>
+
