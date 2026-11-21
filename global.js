@@ -1,4 +1,43 @@
 // ======================================
+// RESPONSIVE NAVIGATION
+// ======================================
+
+const siteHeader = document.querySelector("header");
+const menuToggle = siteHeader && siteHeader.querySelector(".menu-toggle");
+
+if (siteHeader && menuToggle) {
+    const setMenuOpen = (isOpen) => {
+        siteHeader.classList.toggle("menu-open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+    };
+
+    menuToggle.addEventListener("click", () => {
+        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    siteHeader.querySelectorAll("nav a").forEach(link => {
+        link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+            setMenuOpen(false);
+            menuToggle.focus();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 850) {
+            setMenuOpen(false);
+        }
+    });
+}
+
+// ======================================
 // FAQ ACCORDION
 // ======================================
 
@@ -99,7 +138,7 @@ console.log("KBNR Website Loaded Successfully.");
     const status = document.getElementById("formStatus");
     const submitButton = document.getElementById("submitButton");
 
-    form.addEventListener("submit", (event) => {
+    if (form) form.addEventListener("submit", (event) => {
       event.preventDefault();
 
       if (!form.reportValidity()) return;
