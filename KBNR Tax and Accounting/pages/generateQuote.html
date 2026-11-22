@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KBNR Tax & Accounting</title>
+    <title>Quote Estimate | KBNR Tax & Accounting</title>
 
     <link rel="stylesheet" href="/global.css">
+    <script src="/global.js" defer></script>
 </head>
 
+<body>
 <a
     href="https://wa.me/068 289 8111 "
     class="whatsapp-float"
@@ -46,18 +48,125 @@
         </div>
     </header>
 
+    <main class="quote-estimator-page">
+        <div class="container quote-estimator-container">
+            <div class="quote-estimator-heading">
+                <span class="quote-estimator-eyebrow">QUOTE ESTIMATE</span>
+                <h1>Tax &amp; Accounting Estimate</h1>
+                <p>Adjust the quantities and hours below to calculate an estimated range for your tax and accounting requirements.</p>
+            </div>
 
+            <form class="quote-estimator-card" id="quoteEstimator" aria-label="Quote estimate calculator">
+                <fieldset class="quote-estimator-section">
+                    <legend>Tax Services</legend>
 
+                    <div class="quote-service-grid">
+                        <div class="quote-service-row">
+                            <div class="quote-service-info">
+                                <label for="vatReturns">VAT Returns</label>
+                                <p>R1,000–R2,500 per return</p>
+                            </div>
+                            <div class="quote-number-control">
+                                <label for="vatReturns" class="quote-visually-hidden">VAT Returns quantity</label>
+                                <input id="vatReturns" type="number" min="0" step="1" value="0" inputmode="numeric">
+                                <span>returns</span>
+                            </div>
+                        </div>
 
+                        <div class="quote-service-row">
+                            <div class="quote-service-info">
+                                <label for="incomeTaxReturns">Provisional &amp; Income Tax Returns</label>
+                                <p>R2,000–R6,000 per return</p>
+                            </div>
+                            <div class="quote-number-control">
+                                <label for="incomeTaxReturns" class="quote-visually-hidden">Provisional and income tax returns quantity</label>
+                                <input id="incomeTaxReturns" type="number" min="0" step="1" value="0" inputmode="numeric">
+                                <span>returns</span>
+                            </div>
+                        </div>
 
-     <footer>
+                        <div class="quote-service-row">
+                            <div class="quote-service-info">
+                                <label for="ita34Items">Notice of Assessment (ITA34)</label>
+                                <p>R1,000–R2,500 per item</p>
+                            </div>
+                            <div class="quote-number-control">
+                                <label for="ita34Items" class="quote-visually-hidden">ITA34 items quantity</label>
+                                <input id="ita34Items" type="number" min="0" step="1" value="0" inputmode="numeric">
+                                <span>items</span>
+                            </div>
+                        </div>
+
+                        <div class="quote-slider-row">
+                            <div class="quote-slider-heading">
+                                <div>
+                                    <label for="returnQueryHours">Return Queries and Assistance</label>
+                                    <p>R750 per hour</p>
+                                </div>
+                                <output id="returnQueryHoursOutput" for="returnQueryHours">0 hours</output>
+                            </div>
+                            <input id="returnQueryHours" class="quote-range" type="range" min="0" max="20" step="1" value="0">
+                            <div class="quote-range-limits"><span>0 hours</span><span>20 hours</span></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="quote-estimator-section">
+                    <legend>Accounting Services</legend>
+
+                    <div class="quote-service-grid">
+                        <div class="quote-slider-row">
+                            <div class="quote-slider-heading">
+                                <div>
+                                    <label for="accountingHours">Accounting Activities</label>
+                                    <p>R750 per hour</p>
+                                </div>
+                                <output id="accountingHoursOutput" for="accountingHours">0 hours</output>
+                            </div>
+                            <input id="accountingHours" class="quote-range" type="range" min="0" max="20" step="1" value="0">
+                            <div class="quote-range-limits"><span>0 hours</span><span>20 hours</span></div>
+                        </div>
+
+                        <div class="quote-slider-row">
+                            <div class="quote-slider-heading">
+                                <div>
+                                    <label for="financialReportingHours">Financial Reporting</label>
+                                    <p>R750 per hour</p>
+                                </div>
+                                <output id="financialReportingHoursOutput" for="financialReportingHours">0 hours</output>
+                            </div>
+                            <input id="financialReportingHours" class="quote-range" type="range" min="0" max="20" step="1" value="0">
+                            <div class="quote-range-limits"><span>0 hours</span><span>20 hours</span></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="quote-estimate-results" aria-live="polite">
+                    <div class="quote-estimate-result">
+                        <span>Tax Total (Estimate)</span>
+                        <strong id="taxTotal">R0</strong>
+                    </div>
+                    <div class="quote-estimate-result">
+                        <span>Accounting Total (Estimate)</span>
+                        <strong id="accountingTotal">R0</strong>
+                    </div>
+                    <div class="quote-estimate-result quote-estimate-result-combined">
+                        <span>Tax + Accounting Total (Estimate)</span>
+                        <strong id="combinedTotal">R0</strong>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
 
 
     <div class="footer-container">
 
         <div class="footer-about">
 
-       <a href="/index.html" class="site-logo">
+       <a href="../index.html" class="site-logo">
     <img src="../../assets/images/second logo.png"
          alt="KBNR Tax and Accounting">
 </a>
@@ -126,10 +235,6 @@
     </div>
 
 </footer>
-
-
-    <script src="/global.js"></script>
-
 </body>
 </html>
 
